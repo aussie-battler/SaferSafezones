@@ -21,7 +21,3 @@ _trigger = createTrigger["EmptyDetector", _position];
 _trigger setTriggerArea[_radius, _radius, 0, true];
 _trigger setTriggerActivation["EAST", "PRESENT", TRUE];
 _trigger setTriggerStatements["this && {vehicle _x isKindOf 'Man'} count thislist > 0", "{if (_x isKindOf 'Man') then {_x setdamage 1; deleteVehicle _x;}; }foreach thislist;", ""];
-
-if (Debug) then {
-	diag_log format["Safer Safezones: Creating Safezone Trigger		|	Position : %1 	|	Radius : %2m	|	Near : %3 ",_position,_radius,_nearestLocation];
-};
